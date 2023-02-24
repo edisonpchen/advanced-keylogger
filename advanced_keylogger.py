@@ -42,3 +42,5 @@ def write_file(count):
     with open(file, 'w') as fp:
         fp.write(''.join(logged_data))
     print('written all good')
+
+# what the heck is goin on
